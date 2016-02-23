@@ -62,3 +62,28 @@ Get-ADComputer -Filter {LastLogonTimeStamp -lt $lastLogonTimeStampDateFormat -an
   
  } 
 } 
+
+Gather-Computers | Select Name | Sort Name |
+
+#OUTFILE
+Out-File 'C:\Users\j.lafontaine\Desktop\computer removal objects\OldComputers.txt'
+$UnformattedComputerList = 'C:\Users\J.LaFontaine\Desktop\Computer Removal Objects\OldComputers.txt'
+$FormattedComputerList = (gc $UnformattedComputerList | Select -Skip 3) | sc $UnformattedComputerList
+
+
+#Produce Same results as above, except grab DN instead of just DNSHostName for use with Remove-ADcomputer in Script B####
+Gather-Computers |
+ 
+#Sort by DN
+Select DistinguishedName |
+Sort DistinguishedName |
+
+#Produce List of DNs to be used with Script B
+out-file "C:\Users\J.lafontaine\Desktop\Computer Removal Objects\DistinguishedName.txt"
+
+#Remove Dead Space in file
+$FormattedDistinguishedNameList = (gc 'C:\Users\J.lafontaine\Desktop\Computer Removal Objects\DistinguishedName.txt' | 
+Select -Skip 3) | 
+sc 'C:\Users\J.lafontaine\Desktop\Computer Removal Objects\DistinguishedName.txt'
+
+####END ACTIVE DIRECTORY STALE COMPUTER TOOL####
