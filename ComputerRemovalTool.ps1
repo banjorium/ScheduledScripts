@@ -4,9 +4,11 @@
 # Created by: Jordan LaFontaine 01/27/2016                              #
 # Email: J.LaFontaine@snhu.edu                                          #
 #                                                                       #
-# Be sure to run Script A and B before executing this script.           #
+# Be sure to run StaleComputerReportGen.ps1 before executing            #
+# this script.                                                          #
 #                                                                       #
-# Script references OldComputers.TXT and produces DeletedComputers.TXT  #
+# Script referencesout output from StaleComputerReportGen.ps1           #  
+# and produces DeletedComputers_$date.txt                               #
 #########################################################################
 
 
