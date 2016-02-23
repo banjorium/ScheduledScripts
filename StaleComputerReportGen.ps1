@@ -92,13 +92,6 @@ sc 'C:\Users\J.lafontaine\Desktop\Computer Removal Objects\DistinguishedName.txt
 
 
 $Start = [System.DateTime]::Now
-<#Write-Host "Version 1.0"
-Write-host "InputFilePath:"$InputFilePath
-Write-Host "MaxConcurrent:"$MaxConcurrent
-Write-Host "TimesToPing:"$TimesToPing
-Write-Host "TimeoutInSeconds:"$TimeoutInSeconds
-Write-Host "ResolveNames:"$ResolveNames
-#>
 
 function GetNamesFromTextFile
 {
