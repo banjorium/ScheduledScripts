@@ -13,7 +13,7 @@
 
 Import-Module ActiveDirectory 
 
-$SourceFile = "C:\users\j.lafontaine\desktop\computer removal objects\DistinguishedName.txt"
+$SourceFile = Read-Host "Please Enter Path to DistinguishedNames.txt"
 $Computer = get-content $SourceFile
 
 
