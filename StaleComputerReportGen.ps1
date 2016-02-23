@@ -49,7 +49,7 @@ function Gather-Computers
 #Get all AD computers with lastLogonTimestamp and pwdLastSet less than our time 
 Get-ADComputer -Filter {LastLogonTimeStamp -lt $lastLogonTimeStampDateFormat -and pwdLastSet -lt $pwdLastSetDateFormat} -Properties LastLogonTimeStamp, DistinguishedName |
 
-#Filter Out any Objects Living in these OUs: 
+#Filter Out any Objects Living in these OUs 
 ?{
     ($_.distinguishedname -notmatch $VDI) -and
     ($_.distinguishedName -notmatch $SS) -and
