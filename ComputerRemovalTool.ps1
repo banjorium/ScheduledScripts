@@ -13,6 +13,8 @@
 
 Import-Module ActiveDirectory 
 
+$date = Get-Date
+
 $SourceFile = Read-Host "Please Enter Path to DistinguishedNames.txt"
 $Computer = get-content $SourceFile
 
@@ -20,11 +22,11 @@ $Computer = get-content $SourceFile
 ForEach ($Name in $Computer) 
 {   Try {
         Remove-ADComputer $Name -ErrorAction Stop -Confirm:$false -Verbose
-        Add-Content "C:\Users\j.lafontaine\Desktop\computer removal objects\DeletedComputers.txt" -Value "$Name removed"
+        Add-Content "C:\Users\j.lafontaine\Desktop\computer removal objects\DeletedComputers_$date.txt" -Value "$Name removed"
  
     }
     Catch {
-        Add-Content 'C:\users\j.lafontaine\Desktop\computer removal objects\DeletedComputers.txt' -Value "$Name not found because $($Error[0])"
+        Add-Content 'C:\users\j.lafontaine\Desktop\computer removal objects\DeletedComputers_$date.txt' -Value "$Name not found because $($Error[0])"
     }
  
 }
