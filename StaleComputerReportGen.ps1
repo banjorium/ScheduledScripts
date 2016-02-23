@@ -564,10 +564,7 @@ Write-Host ("DNS Names Resolved: " + (GetDNSNamesResolvedCount -results $Formatt
 Write-Host ("Percentage of Hosts that Responded at Least Once: " + (GetPercentageAsString -n1 $SuccessPingCount -n2 $FormattedPingResults.Count)) -ForegroundColor Green
 Write-Host "CSV Output Location:"$OutputPath -ForegroundColor Yellow
 
-
-
 ####END PING TEST####
-
 ####START HTML REPORT GENERATOR####
 
 ##########################################################################
