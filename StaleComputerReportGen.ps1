@@ -530,8 +530,6 @@ function GetPercentageAsString
   return $percentage
 }
 
-$currentdate = (Get-Date)
-
 #Read in Names from text file
 $Names = GetNamesFromTextFile -file $InputFilePath
 
